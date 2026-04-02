@@ -52,7 +52,7 @@ else
   EXPECTED="b1119ecaf54feb68aa5ca8387277e0a929c71cd99fc70f1985b1de1b3b8724b6"
   [[ "$(_hash "$ANS1")" == "$EXPECTED" ]] \
     && pass "$Q" \
-    || fail "$Q" "Wrong command name."
+    || fail "$Q" "Wrong command"
 fi
 
 # ── Q2: touch three files with brace expansion ──────────────
@@ -95,7 +95,7 @@ else
   OUT=$(cd "$BASE" && eval "$ANS4" 2>/dev/null)
   [[ "$(_hash "$OUT")" == "$EXPECTED" ]] \
     && pass "$Q" \
-    || fail "$Q" "Output mismatch. Expected: config.cfg / main.sh / utils.sh"
+    || fail "$Q" "Output mismatch"
 fi
 
 # ── Q5: ls ../src from inside project/docs/ ─────────────────
@@ -110,14 +110,14 @@ else
   OUT=$(cd "$BASE/project/docs" && eval "$ANS5" 2>/dev/null)
   [[ "$(_hash "$OUT")" == "$EXPECTED" ]] \
     && pass "$Q" \
-    || fail "$Q" "Output mismatch. Expected: config.cfg / main.sh / utils.sh"
+    || fail "$Q" "Output mismatch"
 fi
 
 # ── Q6: cp -r project/docs archive/ ────────────────────────
 Q="6 Copy a directory recursively"
 if [[ -z "$ANS6" ]]; then skip "$Q"
 elif [[ "$ANS6" != *"-r"* && "$ANS6" != *"-R"* ]]; then
-  fail "$Q" "CONSTRAINT: must use -r or -R (recursive copy)."
+  fail "$Q" "CONSTRAINT: must use -r or -R"
 else
   T=$(fresh)
   (cd "$T" && eval "$ANS6" 2>/dev/null)
@@ -126,7 +126,7 @@ else
         -f "$T/archive/legacy.sh" ]]; then
     pass "$Q"
   else
-    fail "$Q" "archive/docs/ not found or incomplete. Check your cp -r target path."
+    fail "$Q" "archive/docs/ not found or incomplete"
   fi
   rm -rf "$T"
 fi
@@ -137,7 +137,7 @@ if [[ -z "$ANS7" ]]; then skip "$Q"
 elif [[ "$ANS7" != *"*"* ]]; then
   fail "$Q" "CONSTRAINT: must use file globbing and not individual filenames."
 elif [[ "${#ANS7}" -gt 40 ]]; then
-  fail "$Q" "CONSTRAINT: ${#ANS7} chars — must be ≤ 40."
+  fail "$Q" "CONSTRAINT: ${#ANS7} chars, must be ≤ 35."
 else
   T=$(fresh)
   (cd "$T" && eval "$ANS7" 2>/dev/null)
@@ -170,7 +170,7 @@ else
   if [[ ! -d "$T/tmp/x" ]]; then
     pass "$Q"
   else
-    fail "$Q" "tmp/x still exists — did rmdir -p run successfully?"
+    fail "$Q" "tmp/x still exists"
   fi
   rm -rf "$T"
 fi
@@ -187,7 +187,7 @@ else
   OUT=$(cd "$BASE/project/tests" && eval "$ANS9" 2>/dev/null)
   [[ "$(_hash "$OUT")" == "$EXPECTED" ]] \
     && pass "$Q" \
-    || fail "$Q" "Output mismatch. Expected: legacy.sh. Did you navigate to archive/ correctly?"
+    || fail "$Q" "Output mismatch. Expected: legacy.sh"
 fi
 
 # ── Q10: rename project/ to my-project/ (≤25 chars) ────────
@@ -201,9 +201,9 @@ else
   if [[ -d "$T/my-project" && ! -d "$T/project" ]]; then
     pass "$Q"
   elif [[ -d "$T/project" ]]; then
-    fail "$Q" "project/ still exists — rename did not happen."
+    fail "$Q" "project/ was not renamed"
   else
-    fail "$Q" "my-project/ not found. Expected mv project my-project."
+    fail "$Q" "my-project/ not found"
   fi
   rm -rf "$T"
 fi
