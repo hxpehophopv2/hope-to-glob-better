@@ -104,6 +104,9 @@ ANS6=""
 # ------------------------------------------------------------------
 ANS7=""
 
+HOPE_NOTE_1="Please remove archive/test1.sh and archive/test2.sh before continuing since Q9 test will break if not doing so. You may continue, this is just a warning"
+HOPE_NOTE_2="If your Q7 is failing after this, be advised this is normal and you may continue doing the rest of the set normally"
+
 # ------------------------------------------------------------------
 # Q8 Create and remove a directory chain in one line
 #
@@ -113,8 +116,7 @@ ANS7=""
 #   2. Remove the entire chain:      tmp/x/y/z
 # CONSTRAINT: command must use ';' or '&&' to chain them.
 #
-# Expected side effect: exercise-files/tmp/ exists but is EMPTY
-#                       (the x/y/z chain was created then removed)
+# Expected side effect: exercise-files/tmp/ will be created then removed
 # ------------------------------------------------------------------
 ANS8=""
 
@@ -156,6 +158,9 @@ ANS11=""
 
 # ------------------------------------------------------------------
 # Q12 Chain three operations into one release pipeline
+
+HOPE_NOTE_3="DO NOT actually run the command you are answering since it will BREAK the rest of the questions' test. Just pretend you are actually running it"
+
 #
 # You are in exercise-files/
 # Accomplish ALL of the following in a SINGLE command line:
