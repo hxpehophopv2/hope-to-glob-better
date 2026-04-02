@@ -18,12 +18,15 @@
 │   ├── setup.sh
 │   ├── answers.sh
 │   └── test.sh
-└── ...
+├── set-04/        Class 08–10  Advanced grep · find · Variables · Scripting Basics
+    ├── setup.sh
+    ├── answers.sh
+    └── test.sh
 ```
 
 ## How Do I Use It?
 
-0. If you are on WINDOWS, you are likely needed to use `wsl` (WINDOWS subsystem LINUX) to work on this
+0. If you are on WINDOWS, you are likely needed to use `wsl` (WINDOWS subsystem LINUX) or Prof.Olarn's LINUX server to work on this
 1. Go the the set you want to practice (`cd` recommended)
 2. Switch to your own dedicated branch (`git checkout -b <your-branch-name>`)
 3. Run `bash setup.sh`
@@ -33,8 +36,9 @@
 
 ## Sets
 
-| Set | Class | Topics                                                           |
-| --- | ----- | ---------------------------------------------------------------- |
-| 01  | 03–04 | type · help · man · cat · tac · head · tail · redirection · pipe |
-| 02  | 05    | pwd · cd · ls · touch · mkdir · rmdir · cp · mv · rm             |
-| 03  | 06+08 | ln · chmod · find · grep · globbing                              |
+| Set | Class | Topics                                                                                                         |
+| --- | ----- | -------------------------------------------------------------------------------------------------------------- |
+| 01  | 03–04 | type · help · man · cat · tac · head · tail · redirection · pipe                                               |
+| 02  | 05    | pwd · cd · ls · touch · mkdir · rmdir · cp · mv · rm                                                           |
+| 03  | 06-08 | ln · chmod · find · grep · globbing                                                                            |
+| 04  | 08–10 | grep (regex/anchors/flags) · find (exec) · variables · arithmetic · command substitution · parameter expansion |
