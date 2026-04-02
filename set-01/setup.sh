@@ -5,12 +5,12 @@
 #  (INT132 Class 03 + Class 04)
 # ============================================================
 #  Run this script ONCE to set up the exercise environment:
-#    bash ex-01-basic-and-viewing.sh
+#    bash setup.sh
 # ============================================================
 
 set -e
 
-BASE=~/ex01
+BASE=./exercise-files/
 echo "→ Creating exercise directory at $BASE ..."
 mkdir -p "$BASE/logs" "$BASE/docs"
 

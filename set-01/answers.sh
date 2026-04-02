@@ -4,7 +4,7 @@
 #  Basic Commands & File Viewing
 # ============================================================
 #  Instructions:
-#    1. Run the setup first:  bash ex-01-basic-and-viewing.sh
+#    1. Run the setup first:  bash setup.sh
 #    2. Fill in each ANS variable below with your answer.
 #       - If the question asks for a COMMAND, store the command
 #         as a string, e.g.  ANS1="head -5 fruits.txt"
@@ -13,21 +13,18 @@
 # ============================================================
 
 # ------------------------------------------------------------------
-# Q1 [Easy] — Command Type
+# Q1 Command Type
 #
 # Run `type cd` in your terminal. What is the EXACT output string?
-# (Copy-paste the output as the value of ANS1.)
-#
-# Expected output format:  cd is a ____________
 # ------------------------------------------------------------------
-ANS1="cd is a function with definition"
+ANS1=""
 
 # ------------------------------------------------------------------
-# Q2 [Easy] — cat with line numbers
+# Q2 Display a file with line numbers
 # 
-# You are in ~/ex01/
+# You are in ./exercise-files/
 # Write a command to display fruits.txt WITH line numbers.
-# CONSTRAINT: Your command must use 'cat' and the '-n' flag.
+# CONSTRAINT: Your command must use 'cat'.
 #
 # Expected output (first 3 lines shown):
 #      1	apple
@@ -38,9 +35,9 @@ ANS1="cd is a function with definition"
 ANS2=""
 
 # ------------------------------------------------------------------
-# Q3 [Easy] — head
+# Q3 First lines in a file
 # 
-# You are in ~/ex01/
+# You are in ./exercise-files/
 # Show ONLY the first 4 lines of fruits.txt.
 #
 # Expected output:
@@ -52,9 +49,9 @@ ANS2=""
 ANS3=""
 
 # ------------------------------------------------------------------
-# Q4 [Easy] — tail
+# Q4 Last lines in a file
 # 
-# You are in ~/ex01/
+# You are in ./exercise-files/
 # Show ONLY the last 4 lines of fruits.txt.
 #
 # Expected output:
@@ -66,9 +63,9 @@ ANS3=""
 ANS4=""
 
 # ------------------------------------------------------------------
-# Q5 [Medium] — tac
+# Q5 Display a file in reverse
 # 
-# You are in ~/ex01/
+# You are in ./exercise-files/
 # Display fruits.txt in REVERSE line order (last line first).
 #
 # Expected output:
@@ -81,12 +78,11 @@ ANS4=""
 ANS5=""
 
 # ------------------------------------------------------------------
-# Q6 [Medium] — cd + tail (no path separator allowed)
+# Q6 Multiple commands
 # 
-# Your command will be executed from INSIDE ~/ex01/logs/
-# Show the LAST 5 lines of app.log.
+# You are at ./exercise-files/ but your command will be executed from INSIDE ./exercise-files/logs/
+# Show the LAST 5 lines of ./exercise-files/logs/app.log by going in the .ex-files/logs/ then run a command to display it.
 # CONSTRAINT: Your answer must NOT contain any '/' character.
-#             (You are already inside logs/ — no path needed!)
 #
 # Expected output (last 5 lines of app.log):
 #   [2026-03-01 17:30] INFO: Running diagnostics
@@ -98,11 +94,10 @@ ANS5=""
 ANS6=""
 
 # ------------------------------------------------------------------
-# Q7 [Medium] — pipe: head + tail
+# Q7 Show lines in between
 # 
-# You are in ~/ex01/
-# Show lines 4 through 7 of fruits.txt using a PIPE between
-# exactly two commands (head and tail). No sed, awk, or grep.
+# You are in ./exercise-files/
+# Show lines 4 through 7 of fruits.txt using a PIPE between. No sed, awk, or grep.
 # CONSTRAINT: Answer must contain '|' and be ≤ 40 characters long.
 #
 # Expected output:
@@ -114,14 +109,12 @@ ANS6=""
 ANS7=""
 
 # ------------------------------------------------------------------
-# Q8 [Hard] — stderr redirection
+# Q8 stderr redirection
 # 
-# You are in ~/ex01/
+# You are in ./exercise-files/
 # Run cat on fruits.txt AND a non-existent file called "nofile".
-# Redirect ONLY the stderr (error message) to a file called errors.txt
-# so that the fruit list still appears as normal output.
-# CONSTRAINT: Your answer must contain '2>' to prove you're
-#             redirecting stderr explicitly.
+# Redirect ONLY the stderr error message to a file called errors.txt so that the fruit list still appears as normal output.
+# CONSTRAINT: Your answer must redirect stderr explicitly.
 #
 # Expected stdout (on screen):
 #   apple
@@ -129,17 +122,15 @@ ANS7=""
 #   ...
 #   lemon
 #
-# Side effect: errors.txt is created in ~/ex01/ containing the error.
+# Side effect: errors.txt is created in ./exercise-files/ containing the error.
 # ------------------------------------------------------------------
 ANS8=""
 
 # ------------------------------------------------------------------
-# Q9 [Hard] — pipe: tac + head, with length constraint
+# Q9 Reverse the last lines of a file
 # 
-# You are in ~/ex01/
-# Using tac and head in a pipe, show the LAST 3 fruits in
-# fruits.txt (i.e., the 3 fruits that appear at the BOTTOM of
-# the file), with the bottom-most fruit appearing FIRST.
+# You are in ./exercise-files/
+# Show the LAST 3 fruits in fruits.txt is REVERSING order.
 # CONSTRAINT: Answer must be ≤ 30 characters long.
 #
 # Expected output:
